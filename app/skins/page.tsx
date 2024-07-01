@@ -9,10 +9,24 @@ type SkinRowProps = {
   weapons: WeaponDisplayData[]
 }
 
+export default function Page({ params }: { params: {} }) {
+  return (
+    <main className="mx-auto max-w-6xl space-y-24">
+      <h1 className="text-4xl font-bold mb-16">Skins</h1>
+
+      <SkinRow title="Rifles" weapons={Weapons['Rifle']} />
+      <SkinRow title="Pistols" weapons={Weapons['Pistols']} />
+      <SkinRow title="SMGs" weapons={Weapons['SMG']} />
+      <SkinRow title="Heavy" weapons={Weapons['Heavy']} />
+    </main>
+  )
+}
+
 function SkinRow({ title, weapons }: SkinRowProps) {
   return (
     <div>
       <h2 className="font-semibold text-3xl">{title}</h2>
+      <hr className="mt-2 mb-6" />
       <div className="space-y-12">
         {weapons.map((weapon) => (
           <div>
@@ -50,18 +64,5 @@ function SkinRow({ title, weapons }: SkinRowProps) {
         ))}
       </div>
     </div>
-  )
-}
-
-export default function Page({ params }: { params: {} }) {
-  return (
-    <main className="mx-auto max-w-6xl space-y-24">
-      <h1 className="text-4xl font-bold mb-16">Skins</h1>
-
-      <SkinRow title="Rifles" weapons={Weapons['Rifle']} />
-      <SkinRow title="Pistols" weapons={Weapons['Pistols']} />
-      <SkinRow title="SMGs" weapons={Weapons['SMG']} />
-      <SkinRow title="Heavy" weapons={Weapons['Heavy']} />
-    </main>
   )
 }

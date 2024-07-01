@@ -1,5 +1,6 @@
 import React from 'react'
 import { PlayerDisplayData } from '@/types'
+import { FlagEmoji } from './FlagEmoji'
 
 type Props = {
   player: PlayerDisplayData
@@ -18,9 +19,9 @@ export default function PlayerDisplay({ player }: Props) {
       <div className="rounded-md bg-gradient-to-b from-gray-500 to-[#ffffff00]">
         <img src={player.imgSrc} className="-translate-y-12" />
       </div>
-      <div className="-translate-y-16 scale-105 rounded-md bg-white p-4 text-center shadow-md flex items-center justify-center gap-2">
-        <img src={player.flag} className="w-6 rounded-sm" />
-        <p className="text-lg font-bold text-gray-900">{player.playerName}</p>
+      <div className="-translate-y-16 text-lg scale-105 rounded-md bg-white p-4 text-center shadow-md flex items-center justify-center gap-2">
+        <FlagEmoji countryCode={'us'} />
+        <p className="font-bold text-gray-900">{player.playerName}</p>
       </div>
     </div>
   )

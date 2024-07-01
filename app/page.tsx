@@ -5,6 +5,8 @@ import { WeaponSkinData } from '@/types'
 import { DummySkins } from '@/data/skinData'
 import { DummyPlayers } from '@/data/playerData'
 import PlayerDisplay from '@/components/PlayerDisplay'
+import PrimaryButtonLink from '@/components/Buttons/PrimaryButtonLink'
+import SecondaryButtonLink from '@/components/Buttons/SecondaryButtonLink'
 
 export default function Home() {
   return (
@@ -21,32 +23,8 @@ export default function Home() {
             See what they&apos;re rocking here.
           </p>
           <div className="space-x-4 mt-2">
-            <button
-              type="button"
-              className="inline-flex items-center gap-x-2 rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-            >
-              View Players
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth="1.5"
-                stroke="currentColor"
-                className="size-6"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3"
-                />
-              </svg>
-            </button>
-            <button
-              type="button"
-              className="rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
-            >
-              Popular Skins
-            </button>
+            <PrimaryButtonLink text="View Players" link="/players" />
+            <SecondaryButtonLink text="Popular Skins" link="/skins" />
           </div>
         </div>
         <div className="">

@@ -52,7 +52,7 @@ export default function Loadout({ player }: Props) {
   const [teamFilter, setFilter] = useState(TeamAssigned.BOTH)
 
   const selectedStyle = (filter: TeamAssigned) => {
-    if (teamFilter === filter) return 'bg-indigo-100 text-indigo-700'
+    if (teamFilter === filter) return 'bg-red-100 text-red-700'
 
     return 'text-gray-500 hover:text-gray-700'
   }
@@ -70,7 +70,7 @@ export default function Loadout({ player }: Props) {
             <select
               id="tabs"
               name="tabs"
-              className="block w-full rounded-md border-gray-300 focus:border-indigo-500 focus:ring-indigo-500"
+              className="block w-full rounded-md border-gray-300 focus:border-red-500 focus:ring-red-500"
             >
               <option selected={teamFilter === TeamAssigned.BOTH}>All</option>
               <option selected={teamFilter === TeamAssigned.CT}>
@@ -112,7 +112,7 @@ export default function Loadout({ player }: Props) {
         </div>
       </div>
 
-      <div className="grid grid-cols-4 gap-8">
+      <div className="grid grid-cols-4 gap-8 mt-16">
         <WeaponTypeColumn
           title="Pistols"
           weapons={Weapons.Pistols}

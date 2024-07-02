@@ -8,11 +8,21 @@ import PlayerDisplay from '@/components/PlayerDisplay'
 import PrimaryButtonLink from '@/components/Buttons/PrimaryButtonLink'
 import SecondaryButtonLink from '@/components/Buttons/SecondaryButtonLink'
 
+/*
+    NEEDS: MOST USED 4 SKINS ACROSS ALL SKINS
+    ROUTE: 
+*/
+
+/*
+    NEEDS: TOP 4 PLAYERS WITH MOST KILLS
+    ROUTE: 
+*/
+
 export default function Home() {
   return (
-    <main className="mx-auto max-w-6xl space-y-24">
+    <main className="mx-auto space-y-24 mb-24">
       <div className="grid grid-cols-2">
-        <div className="flex flex-col justify-center gap-4">
+        <div className="flex flex-col justify-center gap-4 col-span-1 pl-56">
           <h1 className="text-7xl font-semibold">
             See The Skins
             <br /> The Pros Use
@@ -23,90 +33,45 @@ export default function Home() {
             See what they&apos;re rocking here.
           </p>
           <div className="space-x-4 mt-2">
-            <PrimaryButtonLink text="View Players" link="/players" />
-            <SecondaryButtonLink text="Popular Skins" link="/skins" />
+            <PrimaryButtonLink text="View Players" href="/players" hasArrow />
+            <SecondaryButtonLink text="Popular Skins" href="/skins" />
           </div>
         </div>
-        <div className="">
-          <Image
-            alt="hero image"
-            className=""
-            src="/hero_image.png"
-            objectFit="contain"
-            width={2000}
-            height={2000}
-            quality={100}
-            priority
-          />
-        </div>
+
+        <img alt="hero image" className="col-span-1" src="/hero_image.png" />
       </div>
 
-      <section className="space-y-10">
-        <div className="flex items-center justify-between">
-          <h2 className="font-semibold text-3xl">Trending Skins</h2>
-          <button
-            type="button"
-            className=" inline-flex items-center gap-x-2 rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
-          >
-            See All Skins
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth="1.5"
-              stroke="currentColor"
-              className="size-6"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3"
-              />
-            </svg>
-          </button>
-        </div>
+      <div className="max-w-6xl mx-auto space-y-24">
+        <section className="space-y-10">
+          <div className="flex items-center justify-between">
+            <h2 className="font-semibold text-3xl">Trending Skins</h2>
+            <SecondaryButtonLink href="/skins" text="See All Skins" hasArrow />
+          </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 justify-between">
-          {DummySkins.map((skin) => (
-            <Link href={skin.skinUri}>
+          <div className="grid grid-cols-2 md:grid-cols-4 justify-between">
+            {DummySkins.map((skin) => (
               <SkinDisplay key={skin.skinName} skin={skin} />
-            </Link>
-          ))}
-        </div>
-      </section>
-
-      <section className="space-y-10">
-        <div className="flex items-center justify-between">
-          <h2 className="font-semibold text-3xl">Featured Players</h2>
-          <button
-            type="button"
-            className=" inline-flex items-center gap-x-2 rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
-          >
-            See All Players
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth="1.5"
-              stroke="currentColor"
-              className="size-6"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3"
-              />
-            </svg>
-          </button>
-        </div>
-        <div className="grid grid-cols-2 md:grid-cols-4 justify-between">
-          {DummyPlayers.map((player) => (
-            <Link href={player.playerUri}>
-              <PlayerDisplay key={player.playerName} player={player} />
-            </Link>
-          ))}
-        </div>
-      </section>
+            ))}
+          </div>
+        </section>
+        <section className="space-y-10">
+          <div className="flex items-center justify-between">
+            <h2 className="font-semibold text-3xl">Featured Players</h2>
+            <SecondaryButtonLink
+              text="See All Players"
+              href="/players"
+              hasArrow
+            />
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 justify-between">
+            {DummyPlayers.map((player) => (
+              <Link href={player.playerUri}>
+                <PlayerDisplay key={player.playerName} player={player} />
+              </Link>
+            ))}
+          </div>
+        </section>
+      </div>
     </main>
   )
 }

@@ -9,7 +9,7 @@ import TeammateDisplay from '@/components/TeammateDisplay'
 
 /*
     NEEDS: Single Player Data / Other Teammates
-    ROUTE: 
+    ROUTE: /api/Player/GetPlayer?playerName=sh1ro
 
     Potentially get top skins and place them as image for each weapon?
 */

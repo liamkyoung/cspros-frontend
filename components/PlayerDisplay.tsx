@@ -20,7 +20,7 @@ export default function PlayerDisplay({ player }: Props) {
         <img src={player.imgSrc} className="-translate-y-12" />
       </div>
       <div className="-translate-y-16 text-lg scale-105 rounded-md bg-white p-4 text-center shadow-md flex items-center justify-center gap-2">
-        <FlagEmoji countryCode={'us'} />
+        <FlagEmoji countryCode={'ro'} />
         <p className="font-bold text-gray-900">{player.playerName}</p>
       </div>
     </div>

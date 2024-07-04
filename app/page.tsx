@@ -10,13 +10,21 @@ import SecondaryButtonLink from '@/components/Buttons/SecondaryButtonLink'
 
 /*
     NEEDS: MOST USED 4 SKINS ACROSS ALL SKINS
-    ROUTE: 
+    ROUTE: /api/Skin/GetPopularSkinsForAllWeapons (May need to replace)
 */
 
 /*
-    NEEDS: TOP 4 PLAYERS WITH MOST KILLS
-    ROUTE: 
+    NEEDS: TOP 4 PLAYERS WITH MOST KILLS (IN GAMES IN THE PAST 7 DAYS)
+    ROUTE: /api/Player/TrendingPlayers
 */
+
+// Get all games the past 3 days
+// Join /w SkinUsages
+// Get Skins with most kills for games in past 7 days
+
+// Get all games the past 3 days
+// Join /w SkinUsages
+// Get Players with most kills for games in past 7 days
 
 export default function Home() {
   return (

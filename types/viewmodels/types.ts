@@ -1,21 +1,23 @@
-export type WeaponSkinData = {
-  skinUri: string
-  imgSrc: string
+import { Team } from '../models/Team'
+
+export type SkinProfile = {
+  uri: string
+  imageSrc: string
   weaponName: string
   skinName: string
   skinRarity: SkinRarity
-  numberOfUses: number
+  numberOfKills: number
 }
 
-export type PlayerDisplayData = {
-  playerUri: string
-  teamName: string
+export type PlayerProfile = {
+  uri: string
+  team: Team
   playerName: string
-  flag: string // May have to be an icon?
-  imgSrc: string
+  countryAbbreviation?: string
+  profileImage: string
 }
 
-export type WeaponDisplayData = {
+export type WeaponProfile = {
   weaponName: string
   normalizedName: string
   imgSrc: string
@@ -50,10 +52,4 @@ export enum SkinRarity {
   COVERT = 'RED',
   EXTRAORDINARY = 'GOLD',
   CONTRABAND = 'ORANGE',
-}
-
-export enum LoadoutLinkType {
-  NoLink,
-  AllSkins,
-  PlayerSkins,
 }

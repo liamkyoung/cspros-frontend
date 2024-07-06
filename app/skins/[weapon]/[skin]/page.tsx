@@ -5,6 +5,11 @@ import { GetSkinRarityName } from '@/utils/SkinRarityUtilities'
 import SkinContainer from './SkinContainer'
 import PlayerContainer from './PlayerContainer'
 
+/*
+    NEEDS: TOP 5 Players using a particular skin and number of kills for each player
+    ROUTE: /api/Skin/PlayersUsingSkin?skinName=Printstream&weaponDemoName=deagle
+*/
+
 export default function Page({
   params,
 }: {

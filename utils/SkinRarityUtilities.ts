@@ -1,4 +1,4 @@
-import { SkinRarity } from '../types'
+import { SkinRarity } from '@/types/viewmodels/types'
 
 export function GetSkinRarityTextColor(Rarity: SkinRarity): string {
   switch (Rarity) {

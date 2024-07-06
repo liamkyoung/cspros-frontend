@@ -1,14 +1,31 @@
-import SkinRow from '@/components/SkinRow'
+'use client'
+import SkinProfileGroup from '@/components/SkinProfileGroup'
 import { DummySkins } from '@/data/skinData'
 import { Weapons } from '@/data/weaponData'
+import { getAllSkinsForWeapon } from '@/utils/data/Skins'
+import { SkinProfile } from '@/types/viewmodels/types'
 import Link from 'next/link'
-
+import { useState, useEffect } from 'react'
+import SkinDisplay from '@/components/SkinDisplay'
 /*
     NEEDS: ALL SKINS FOR A PARTICULAR WEAPON, WEAPON FORMATTED NAME
-    ROUTE: 
+    ROUTE: /api/Skin/GetAllSkinsForWeapon?weaponName=ak47
 */
 
 export default function Page({ params }: { params: { weapon: string } }) {
+  const [skins, setSkins] = useState<SkinProfile[] | null>(null)
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    const getData = async () => {
+      const apiData = await getAllSkinsForWeapon(params.weapon)
+      setSkins(apiData)
+      setLoading(false)
+    }
+
+    getData()
+  }, [])
+
   return (
     <main className="mx-auto max-w-6xl mt-16">
       <Link href="/skins" className="inline-flex gap-2 text-2xl items-center">
@@ -29,13 +46,8 @@ export default function Page({ params }: { params: { weapon: string } }) {
         {params.weapon}
       </Link>
 
-      <div>
-        {/* {TODO: CHANGE TO LOAD WEAPONS FROM API} */}
-        <SkinRow
-          hideViewAllButton
-          hideWeaponTitle
-          weapons={Weapons['Pistols']}
-        />
+      <div className="grid grid-cols-4">
+        {skins && skins.map((skin) => <SkinDisplay skin={skin} />)}
       </div>
     </main>
   )

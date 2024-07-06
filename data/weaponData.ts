@@ -1,6 +1,10 @@
-import { TeamAssigned, WeaponDisplayData, WeaponType } from '@/types'
+import {
+  TeamAssigned,
+  WeaponProfile,
+  WeaponType,
+} from '@/types/viewmodels/types'
 
-export const Pistols: WeaponDisplayData[] = [
+export const Pistols: WeaponProfile[] = [
   {
     teamAssigned: TeamAssigned.T,
     weaponName: 'Glock-18',
@@ -53,7 +57,7 @@ export const Pistols: WeaponDisplayData[] = [
   {
     teamAssigned: TeamAssigned.BOTH,
     weaponName: 'R8 Revolver',
-    normalizedName: 'r8-revolver',
+    normalizedName: 'r8',
     weaponType: WeaponType.PISTOL,
     imgSrc: '/img/weapons/r8.webp',
   },
@@ -73,7 +77,7 @@ export const Pistols: WeaponDisplayData[] = [
   },
 ]
 
-export const Heavy: WeaponDisplayData[] = [
+export const Heavy: WeaponProfile[] = [
   {
     teamAssigned: TeamAssigned.CT,
     weaponName: 'MAG-7',
@@ -118,7 +122,7 @@ export const Heavy: WeaponDisplayData[] = [
   },
 ]
 
-export const SMG: WeaponDisplayData[] = [
+export const SMG: WeaponProfile[] = [
   {
     teamAssigned: TeamAssigned.T,
     weaponName: 'Mac-10',
@@ -170,11 +174,11 @@ export const SMG: WeaponDisplayData[] = [
   },
 ]
 
-export const Rifle: WeaponDisplayData[] = [
+export const Rifle: WeaponProfile[] = [
   {
     teamAssigned: TeamAssigned.T,
     weaponName: 'AK47',
-    normalizedName: 'ak47',
+    normalizedName: 'ak-47',
     weaponType: WeaponType.RIFLE,
     imgSrc: '/img/weapons/ak47.webp',
   },

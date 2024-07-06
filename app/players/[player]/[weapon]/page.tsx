@@ -1,6 +1,6 @@
 import PlayerDisplay from '@/components/PlayerDisplay'
 import TeammateDisplay from '@/components/TeammateDisplay'
-import { s1mple, m0nesy, NiKo, dev1ce } from '@/data/playerData'
+import { s1mple } from '@/data/playerData'
 import { AK_REDLINE, AWP_ASIIMOV, M4_HOWL } from '@/data/skinData'
 import FavoriteWeapon from './FavoriteWeapon'
 import Breadcrumbs from './Breadcrumbs'
@@ -8,7 +8,7 @@ import Link from 'next/link'
 
 /*
     NEEDS: MOST USED 3 SKINS FOR SPECIFIC PLAYER AND SPECIFIC WEAPON
-    ROUTE: 
+    ROUTE: /api/Skin/GetPopularSkinsForPlayerAndWeapon?playerName=apEX&weaponName=usp_silencer
 */
 
 export default function Page({
@@ -23,9 +23,9 @@ export default function Page({
         <div className="flex gap-16 mx-auto mt-24">
           <div className="space-y-4">
             <h2>Teammates</h2>
-            <TeammateDisplay player={m0nesy} />
-            <TeammateDisplay player={NiKo} />
-            <TeammateDisplay player={dev1ce} />
+            <TeammateDisplay player={s1mple} />
+            <TeammateDisplay player={s1mple} />
+            <TeammateDisplay player={s1mple} />
           </div>
         </div>
       </div>

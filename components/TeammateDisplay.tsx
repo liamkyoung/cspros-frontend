@@ -1,16 +1,16 @@
-import { PlayerDisplayData } from '@/types'
+import { PlayerProfile } from '@/types/viewmodels/types'
 import Link from 'next/link'
 import React from 'react'
 
 type Props = {
-  player: PlayerDisplayData
+  player: PlayerProfile
 }
 
 export default function TeammateDisplay({ player }: Props) {
   return (
-    <Link href={`/players/${player.playerName}`} className="block">
+    <Link href={player.uri} className="block">
       <div className="grid grid-cols-6 items-center gap-4 bg-white w-72 px-6 rounded-md">
-        <img src={player.imgSrc} className="size-24 col-span-3" />
+        <img src={player.profileImage} className="size-24 col-span-3" />
         <span className="font-semibold text-lg text-gray-900 col-span-2">
           {player.playerName}
         </span>

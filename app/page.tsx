@@ -1,12 +1,11 @@
 import SkinDisplay from '@/components/SkinDisplay'
-import Image from 'next/image'
 import Link from 'next/link'
-import { WeaponSkinData } from '@/types'
 import { DummySkins } from '@/data/skinData'
-import { DummyPlayers } from '@/data/playerData'
 import PlayerDisplay from '@/components/PlayerDisplay'
 import PrimaryButtonLink from '@/components/Buttons/PrimaryButtonLink'
 import SecondaryButtonLink from '@/components/Buttons/SecondaryButtonLink'
+import { getTrendingPlayers } from '@/utils/data/Players'
+import TrendingPlayers from '@/components/TrendingPlayers'
 
 /*
     NEEDS: MOST USED 4 SKINS ACROSS ALL SKINS
@@ -71,13 +70,8 @@ export default function Home() {
               hasArrow
             />
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 justify-between">
-            {DummyPlayers.map((player) => (
-              <Link href={player.playerUri}>
-                <PlayerDisplay key={player.playerName} player={player} />
-              </Link>
-            ))}
-          </div>
+
+          <TrendingPlayers />
         </section>
       </div>
     </main>

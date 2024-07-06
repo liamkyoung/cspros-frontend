@@ -2,23 +2,22 @@
 
 import React, { useState } from 'react'
 import {
-  LoadoutLinkType,
-  PlayerDisplayData,
+  PlayerProfile,
   TeamAssigned,
-  WeaponDisplayData,
-} from '@/types'
+  WeaponProfile,
+} from '@/types/viewmodels/types'
 import { Weapons } from '@/data/weaponData'
 import WeaponDisplay from '@/components/WeaponDisplay'
 
 type Props = {
-  player?: PlayerDisplayData
+  player?: PlayerProfile
 }
 
 type WeaponTypeColumnProps = {
   title: string
-  weapons: WeaponDisplayData[]
+  weapons: WeaponProfile[]
   filter: TeamAssigned
-  player?: PlayerDisplayData
+  player?: PlayerProfile
 }
 
 function WeaponTypeColumn({

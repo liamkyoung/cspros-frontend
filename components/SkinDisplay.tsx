@@ -1,9 +1,9 @@
 import React from 'react'
-import { SkinRarity, WeaponSkinData } from '../types'
+import { SkinRarity, SkinProfile } from '@/types/viewmodels/types'
 import Link from 'next/link'
 
 type Props = {
-  skin: WeaponSkinData
+  skin: SkinProfile
 }
 
 function getBackgroundGradient(Rarity: SkinRarity): string {
@@ -31,7 +31,7 @@ function getBackgroundGradient(Rarity: SkinRarity): string {
 
 export default function SkinDisplay({ skin }: Props) {
   return (
-    <Link href={skin.skinUri} className="block">
+    <Link href={skin.uri} className="block">
       <div className="relative size-64 hover:scale-110">
         <span className="absolute -right-4 -top-4 flex items-center gap-1 rounded-md bg-green-500 px-3 py-2 text-sm font-semibold text-white">
           160%
@@ -55,7 +55,7 @@ export default function SkinDisplay({ skin }: Props) {
             skin.skinRarity
           )}`}
         >
-          <img src={skin.imgSrc} className="scale-[120%]" />
+          <img src={skin.imageSrc} className="scale-[120%]" />
         </div>
         <div className="-translate-y-20 scale-105 rounded-md bg-white/95 p-4 text-right">
           <p className="text-lg font-bold text-gray-900">{skin.skinName}</p>

@@ -1,4 +1,4 @@
-import { WeaponSkinData } from '@/types'
+import { SkinProfile } from '@/types/viewmodels/types'
 import PrimaryButtonLink from '@/components/Buttons/PrimaryButtonLink'
 import SecondaryButtonLink from '@/components/Buttons/SecondaryButtonLink'
 import {
@@ -8,7 +8,7 @@ import {
 import React from 'react'
 
 type Props = {
-  skin: WeaponSkinData
+  skin: SkinProfile
 }
 
 export default function SkinContainer({ skin }: Props) {
@@ -22,7 +22,7 @@ export default function SkinContainer({ skin }: Props) {
           {GetSkinRarityName(skin.skinRarity)}
         </h4>
       </div>
-      <img src={skin.imgSrc} />
+      <img src={skin.imageSrc} />
       <div className="flex items-center gap-8">
         <PrimaryButtonLink
           text="CSGO Stash"

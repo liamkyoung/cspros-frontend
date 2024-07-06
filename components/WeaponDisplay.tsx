@@ -1,11 +1,10 @@
 import React from 'react'
-import { LoadoutLinkType, PlayerDisplayData, WeaponDisplayData } from '@/types'
+import { PlayerProfile, WeaponProfile } from '@/types/viewmodels/types'
 import Link from 'next/link'
-import { Url } from 'next/dist/shared/lib/router/router'
 
 type Props = {
-  weapon: WeaponDisplayData
-  player?: PlayerDisplayData
+  weapon: WeaponProfile
+  player?: PlayerProfile
 }
 
 export default function WeaponDisplay({ weapon, player }: Props) {

@@ -1,9 +1,4 @@
-'use client'
-
-import React, { useState } from 'react'
-import { LoadoutLinkType, TeamAssigned } from '@/types'
-import { Weapons } from '@/data/weaponData'
-import WeaponDisplay from '@/components/WeaponDisplay'
+import React from 'react'
 import Loadout from '@/components/Loadout'
 
 type Props = {}

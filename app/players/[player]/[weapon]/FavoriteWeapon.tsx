@@ -1,8 +1,8 @@
 import React from 'react'
-import { WeaponSkinData } from '@/types'
+import { SkinProfile } from '@/types/viewmodels/types'
 
 type Props = {
-  weapon: WeaponSkinData
+  weapon: SkinProfile
   large?: boolean
 }
 
@@ -17,7 +17,7 @@ export default function FavoriteWeapon({ weapon, large = false }: Props) {
         {weapon.weaponName} | {weapon.skinName}
       </h3>
       <div className="flex">
-        <img src={weapon.imgSrc} />
+        <img src={weapon.imageSrc} />
         <div className="font-medium text-lg">
           <p>Games: 120</p>
           <p>Kills: 999,999</p>

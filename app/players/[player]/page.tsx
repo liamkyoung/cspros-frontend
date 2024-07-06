@@ -1,11 +1,11 @@
+'use client'
 import PlayerDisplay from '@/components/PlayerDisplay'
-import Head from 'next/head'
-import Image from 'next/image'
-import Link from 'next/link'
-import { s1mple, m0nesy, NiKo, dev1ce } from '@/data/playerData'
+import { PlayerProfile } from '@/types/viewmodels/types'
+import { s1mple } from '@/data/playerData'
 import Loadout from '@/components/Loadout'
-import { LoadoutLinkType } from '@/types'
 import TeammateDisplay from '@/components/TeammateDisplay'
+import { useState, useEffect } from 'react'
+import { getPlayer } from '@/utils/data/Players'
 
 /*
     NEEDS: Single Player Data / Other Teammates
@@ -15,19 +15,36 @@ import TeammateDisplay from '@/components/TeammateDisplay'
 */
 
 export default function Page({ params }: { params: { player: string } }) {
+  const [player, setPlayer] = useState<PlayerProfile | null>(null)
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    const getData = async () => {
+      const apiData = await getPlayer(params.player)
+      setPlayer(apiData)
+      setLoading(false)
+    }
+
+    getData()
+  }, [])
+
   return (
     <main className="flex gap-16 mt-24">
-      <div>
-        <PlayerDisplay player={s1mple} />
-        <div className="space-y-4 mt-10">
-          <h2>Teammates</h2>
-          <TeammateDisplay player={m0nesy} />
-          <TeammateDisplay player={NiKo} />
-          <TeammateDisplay player={dev1ce} />
-        </div>
-      </div>
+      {player && (
+        <>
+          <div>
+            <PlayerDisplay player={player} />
+            <div className="space-y-4 mt-10">
+              <h2>Teammates</h2>
+              <TeammateDisplay player={player} />
+              <TeammateDisplay player={player} />
+              <TeammateDisplay player={player} />
+            </div>
+          </div>
 
-      <Loadout player={s1mple} />
+          <Loadout player={player} />
+        </>
+      )}
     </main>
   )
 }

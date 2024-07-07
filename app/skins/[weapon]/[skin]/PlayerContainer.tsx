@@ -1,13 +1,13 @@
 import React from 'react'
-import { s1mple } from '@/data/playerData'
-import { PlayerProfile, SkinProfile } from '@/types/viewmodels/types'
-import TeammateDisplay from '@/components/TeammateDisplay'
+import { SkinProfile, SkinUsage } from '@/types/viewmodels/types'
+import TopPlayer from '@/components/TopPlayer'
 
 type Props = {
   skin: SkinProfile
+  players: SkinUsage[]
 }
 
-export default function PlayerContainer({ skin }: Props) {
+export default function PlayerContainer({ skin, players }: Props) {
   return (
     <div className="">
       <h2 className="font-medium text-2xl text-right">
@@ -15,9 +15,14 @@ export default function PlayerContainer({ skin }: Props) {
       </h2>
       <div className="space-y-4 flex flex-col items-end mt-4">
         {/* <TeammateDisplay player={iM} /> */}
-        <TeammateDisplay player={s1mple} />
-        <TeammateDisplay player={s1mple} />
-        <TeammateDisplay player={s1mple} />
+        {players &&
+          players.map((skinUsage) => (
+            <TopPlayer
+              key={skinUsage.player.playerName}
+              skinUsage={skinUsage}
+            />
+          ))}
+
         <button
           type="button"
           className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"

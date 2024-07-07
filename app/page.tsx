@@ -1,11 +1,7 @@
-import SkinDisplay from '@/components/SkinDisplay'
-import Link from 'next/link'
-import { DummySkins } from '@/data/skinData'
-import PlayerDisplay from '@/components/PlayerDisplay'
 import PrimaryButtonLink from '@/components/Buttons/PrimaryButtonLink'
 import SecondaryButtonLink from '@/components/Buttons/SecondaryButtonLink'
-import { getTrendingPlayers } from '@/utils/data/Players'
 import TrendingPlayers from '@/components/TrendingPlayers'
+import TrendingSkins from '@/components/TrendingSkins'
 
 /*
     NEEDS: MOST USED 4 SKINS ACROSS ALL SKINS
@@ -49,18 +45,7 @@ export default function Home() {
       </div>
 
       <div className="max-w-6xl mx-auto space-y-24">
-        <section className="space-y-10">
-          <div className="flex items-center justify-between">
-            <h2 className="font-semibold text-3xl">Trending Skins</h2>
-            <SecondaryButtonLink href="/skins" text="See All Skins" hasArrow />
-          </div>
-
-          <div className="grid grid-cols-2 md:grid-cols-4 justify-between">
-            {DummySkins.map((skin) => (
-              <SkinDisplay key={skin.skinName} skin={skin} />
-            ))}
-          </div>
-        </section>
+        <TrendingSkins />
         <section className="space-y-10">
           <div className="flex items-center justify-between">
             <h2 className="font-semibold text-3xl">Featured Players</h2>
@@ -70,7 +55,6 @@ export default function Home() {
               hasArrow
             />
           </div>
-
           <TrendingPlayers />
         </section>
       </div>

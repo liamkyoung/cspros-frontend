@@ -32,8 +32,8 @@ export default function TrendingPlayers({}: Props) {
     <div className="grid grid-cols-2 md:grid-cols-4 justify-between">
       {trendingPlayers &&
         trendingPlayers.map((player) => (
-          <Link href={player.uri}>
-            <PlayerDisplay key={player.playerName} player={player} />
+          <Link href={player.uri} key={player.playerName}>
+            <PlayerDisplay player={player} />
           </Link>
         ))}
     </div>

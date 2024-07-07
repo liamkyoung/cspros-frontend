@@ -2,11 +2,11 @@ import React from 'react'
 import { SkinProfile } from '@/types/viewmodels/types'
 
 type Props = {
-  weapon: SkinProfile
+  skin: SkinProfile
   large?: boolean
 }
 
-export default function FavoriteWeapon({ weapon, large = false }: Props) {
+export default function FavoriteWeapon({ skin, large = false }: Props) {
   return (
     <div
       className={`bg-red-400 p-8 rounded-md ${
@@ -14,13 +14,13 @@ export default function FavoriteWeapon({ weapon, large = false }: Props) {
       }`}
     >
       <h3 className="font-bold text-2xl">
-        {weapon.weaponName} | {weapon.skinName}
+        {skin.weaponName} | {skin.skinName}
       </h3>
       <div className="flex">
-        <img src={weapon.imageSrc} />
+        <img src={skin.imageSrc} />
         <div className="font-medium text-lg">
-          <p>Games: 120</p>
-          <p>Kills: 999,999</p>
+          <p>Kills: {skin.numberOfKills}</p>
+          {skin.gamesUsed && <p>Games Used: {skin.gamesUsed}</p>}
         </div>
       </div>
     </div>

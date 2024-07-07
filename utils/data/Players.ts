@@ -36,3 +36,22 @@ export const getPlayer = async (
     return null
   }
 }
+
+export const getTeammates = async (
+  playerName: string
+): Promise<PlayerProfile[] | null> => {
+  try {
+    const response = await fetch(
+      `${BACKEND_HOST}/api/Player/GetTeammates?playerName=${playerName}`
+    )
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`)
+    }
+    const data: PlayerProfile[] = await response.json()
+
+    return data
+  } catch (error) {
+    console.error('There was an error fetching the data:', error)
+    return null
+  }
+}

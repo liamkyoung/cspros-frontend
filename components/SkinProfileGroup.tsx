@@ -1,11 +1,6 @@
 import React from 'react'
 import { WeaponProfile } from '../types/viewmodels/types'
-import { DummySkins } from '../data/skinData'
-import SkinDisplay from './SkinDisplay'
-import Link from 'next/link'
 import SecondaryButtonLink from './Buttons/SecondaryButtonLink'
-
-import { getPopularSkinsForWeapon } from '@/utils/data/Skins'
 import PopularSkins from './PopularSkins'
 
 type SkinRowProps = {

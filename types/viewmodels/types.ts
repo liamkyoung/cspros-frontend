@@ -6,7 +6,8 @@ export type SkinProfile = {
   weaponName: string
   skinName: string
   skinRarity: SkinRarity
-  numberOfKills: number
+  numberOfKills?: number
+  gamesUsed?: number
 }
 
 export type PlayerProfile = {
@@ -15,6 +16,22 @@ export type PlayerProfile = {
   playerName: string
   countryAbbreviation?: string
   profileImage: string
+}
+
+export type TeamProfile = {
+  players: PlayerProfile[]
+  teamName: string
+}
+
+export type PlayersUsingSkin = {
+  players: SkinUsage[]
+  skin: SkinProfile
+}
+
+export type SkinUsage = {
+  player: PlayerProfile
+  gamesUsed: number
+  totalKills: number
 }
 
 export type WeaponProfile = {
@@ -44,12 +61,12 @@ export enum WeaponType {
 }
 
 export enum SkinRarity {
-  CONSUMER = 'WHITE',
-  INDUSTRIAL = 'LIGHTBLUE',
-  MILSPEC = 'BLUE',
-  RESTRICTED = 'PURPLE',
-  CLASSIFIED = 'PINK',
-  COVERT = 'RED',
-  EXTRAORDINARY = 'GOLD',
-  CONTRABAND = 'ORANGE',
+  CONSUMER,
+  INDUSTRIAL,
+  MILSPEC,
+  RESTRICTED,
+  CLASSIFIED,
+  COVERT,
+  EXTRAORDINARY,
+  CONTRABAND,
 }

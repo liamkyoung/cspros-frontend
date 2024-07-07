@@ -33,23 +33,6 @@ export default function SkinDisplay({ skin }: Props) {
   return (
     <Link href={skin.uri} className="block">
       <div className="relative size-64 hover:scale-110">
-        <span className="absolute -right-4 -top-4 flex items-center gap-1 rounded-md bg-green-500 px-3 py-2 text-sm font-semibold text-white">
-          160%
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth="1.5"
-            stroke="currentColor"
-            className="size-5"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M2.25 18 9 11.25l4.306 4.306a11.95 11.95 0 0 1 5.814-5.518l2.74-1.22m0 0-5.94-2.281m5.94 2.28-2.28 5.941"
-            />
-          </svg>
-        </span>
         <div
           className={`rounded-md bg-gradient-to-b ${getBackgroundGradient(
             skin.skinRarity

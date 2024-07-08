@@ -39,7 +39,9 @@ export default function Page({ params }: { params: { player: string } }) {
             <div className="space-y-4 mt-10 hidden lg:block">
               <h2 className="text-xl font-medium">Teammates</h2>
               {teammates &&
-                teammates.map((p) => <TeammateDisplay player={p} />)}
+                teammates.map((p) => (
+                  <TeammateDisplay key={p.playerName} player={p} />
+                ))}
             </div>
           </div>
 

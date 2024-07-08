@@ -50,7 +50,7 @@ export default function Page({ params }: { params: { weapon: string } }) {
       {skins ? (
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 place-items-center mt-16">
           {skins.map((skin) => (
-            <SkinDisplay skin={skin} />
+            <SkinDisplay key={skin.skinName} skin={skin} />
           ))}
         </div>
       ) : (

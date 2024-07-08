@@ -57,7 +57,10 @@ export default function Page({
         <div className="lg:flex gap-16 mx-auto hidden">
           <div className="space-y-4">
             <h2 className="text-xl font-medium">Teammates</h2>
-            {teammates && teammates.map((p) => <TeammateDisplay player={p} />)}
+            {teammates &&
+              teammates.map((p) => (
+                <TeammateDisplay key={p.playerName} player={p} />
+              ))}
           </div>
         </div>
       </div>
@@ -67,7 +70,7 @@ export default function Page({
           <Breadcrumbs playerName={params.player} weaponName={params.weapon} />
           <div className="grid grid-cols-2 gap-x-6">
             {skinProfiles.map((skin, i) => (
-              <FavoriteWeapon skin={skin} large={i == 0} />
+              <FavoriteWeapon key={skin.skinName} skin={skin} large={i == 0} />
             ))}
           </div>
         </div>

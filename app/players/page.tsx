@@ -30,11 +30,15 @@ export default function Page() {
       <div className="space-y-16 flex flex-col mt-12">
         {teams &&
           teams.map((team) => (
-            <div className="mx-10 lg:mx-0">
+            <div key={team.teamName} className="mx-10 lg:mx-0">
               <h1 className="text-3xl font-medium">{team.teamName}</h1>
               <div className="flex flex-col lg:flex-row gap-8 mt-6 lg:mt-12 lg:justify-between">
                 {team.players.map((player) => (
-                  <Link href={player.uri} className="hover:scale-110">
+                  <Link
+                    key={player.playerName}
+                    href={player.uri}
+                    className="hover:scale-110"
+                  >
                     <PlayerDisplay player={player} />
                   </Link>
                 ))}

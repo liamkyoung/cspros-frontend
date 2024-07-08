@@ -56,9 +56,9 @@ export default function Loadout({ player }: Props) {
     return 'text-gray-500 hover:text-gray-700'
   }
 
-  const handleChange = (event) => {
-    setFilter(event.target.value)
-  }
+  // const handleChange = (event : React.ChangeEvent<HTMLSelectElement>) => {
+  //   setFilter(event.target.value)
+  // }
 
   return (
     <div>
@@ -74,7 +74,7 @@ export default function Loadout({ player }: Props) {
               id="tabs"
               name="tabs"
               className="block w-full rounded-md border-gray-300 focus:border-gray-500 focus:ring-gray-500 text-black"
-              onChange={handleChange}
+              // onChange={e => setFilter(e.target.value)}
             >
               <option
                 selected={teamFilter === TeamAssigned.BOTH}

@@ -27,7 +27,7 @@ export default function SkinProfileGroup({
 
       <div className="space-y-12">
         {weapons.map((weapon) => (
-          <div>
+          <div key={weapon.weaponName}>
             <div className="flex items-center justify-between mb-10">
               {!hideWeaponTitle && (
                 <h3 className="text-3xl font-medium">{weapon.weaponName}</h3>

@@ -6,7 +6,12 @@ type Props = {}
 export default function Logo({}: Props) {
   return (
     <div>
-      <Image src="/cspros-logo.png" alt="cs-pros logo" width="75" height="75" />
+      <Image
+        src="/cs-pros-logo.png"
+        alt="cs-pros logo"
+        width="50"
+        height="50"
+      />
     </div>
   )
 }

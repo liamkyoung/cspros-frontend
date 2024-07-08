@@ -8,7 +8,7 @@ type Props = {
 
 export default function Breadcrumbs({ playerName, weaponName }: Props) {
   return (
-    <span>
+    <span className="text-xl gap-2 hidden lg:flex">
       <Link className="underline text-sky-500" href={`/players`}>
         players
       </Link>

@@ -25,12 +25,12 @@ export default function Home() {
   return (
     <main className="mx-auto space-y-24 mb-24">
       <div className="grid grid-cols-2">
-        <div className="flex flex-col justify-center gap-4 col-span-1 pl-56">
-          <h1 className="text-7xl font-semibold">
+        <div className="flex flex-col justify-center gap-4 col-span-2 lg:col-span-1 text-center lg:text-left p-10 md:pl-0 lg:pl-20">
+          <h1 className="text-7xl font-semibold whitespace-normal lg:whitespace-nowrap">
             See The Skins
             <br /> The Pros Use
           </h1>
-          <p className="text-lg">
+          <p className="text-lg whitespace-normal lg:whitespace-nowrap">
             Want to use the same skins as your favorite players?
             <br />
             See what they&apos;re rocking here.
@@ -41,12 +41,16 @@ export default function Home() {
           </div>
         </div>
 
-        <img alt="hero image" className="col-span-1" src="/hero_image.png" />
+        <img
+          alt="hero image"
+          className="hidden lg:block lg:col-span-1"
+          src="/hero_image.png"
+        />
       </div>
 
       <div className="max-w-6xl mx-auto space-y-24">
         <TrendingSkins />
-        <section className="space-y-10">
+        <section className="space-y-10 px-4">
           <div className="flex items-center justify-between">
             <h2 className="font-semibold text-3xl">Featured Players</h2>
             <SecondaryButtonLink

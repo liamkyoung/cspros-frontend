@@ -29,10 +29,14 @@ export default function TrendingPlayers({}: Props) {
   }
 
   return (
-    <div className="grid grid-cols-2 md:grid-cols-4 justify-between">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:grid-cols-4 justify-between">
       {trendingPlayers &&
         trendingPlayers.map((player) => (
-          <Link href={player.uri} key={player.playerName}>
+          <Link
+            className="hover:scale-110"
+            href={player.uri}
+            key={player.playerName}
+          >
             <PlayerDisplay player={player} />
           </Link>
         ))}

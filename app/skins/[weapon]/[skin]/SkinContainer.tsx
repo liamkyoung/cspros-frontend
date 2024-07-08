@@ -2,6 +2,7 @@ import { SkinProfile, SkinRarity } from '@/types/viewmodels/types'
 import PrimaryButtonLink from '@/components/Buttons/PrimaryButtonLink'
 import SecondaryButtonLink from '@/components/Buttons/SecondaryButtonLink'
 import { GetSkinRarityName } from '@/utils/SkinRarityUtilities'
+import Link from 'next/link'
 
 import React from 'react'
 
@@ -34,30 +35,41 @@ function getBackgroundGradient(Rarity: SkinRarity): string {
 
 export default function SkinContainer({ skin }: Props) {
   return (
-    <div
-      className={`rounded-md flex flex-col items-center p-8 bg-gradient-to-b ${getBackgroundGradient(
-        skin.skinRarity
-      )}`}
-    >
-      <div className="inline-flex items-end gap-x-2">
-        <h1 className="text-4xl font-bold text-gray-900">
-          {skin.weaponName} | {skin.skinName}
-        </h1>
-        <h4 className={`text-xl text-gray`}>
-          {GetSkinRarityName(skin.skinRarity)}
-        </h4>
-      </div>
-      <img src={skin.imageSrc} />
-      <div className="flex items-center gap-8">
-        <PrimaryButtonLink
-          text="CSGO Stash"
-          href={`https://csgostash.com/weapon/Desert+Eagle`}
-          hasArrow
-        />
-        <SecondaryButtonLink
-          text={`See All ${skin.weaponName}s`}
-          href={skin.uri}
-        />
+    <div className="mx-10">
+      <Link href={`/skins`}>
+        <p className="inline-flex items-center gap-4 bg-slate-600 ring-1 ring-white rounded-md px-4 py-2 text-lg mb-12 text-center mx-auto">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth="1.5"
+            stroke="currentColor"
+            className="size-6"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M6.75 15.75 3 12m0 0 3.75-3.75M3 12h18"
+            />
+          </svg>
+          See all skins
+        </p>
+      </Link>
+      <div className="max-w-96 max-h-96 lg:max-w-none lg:max-h-none mx-auto">
+        <div
+          className={`rounded-md bg-gradient-to-b ${getBackgroundGradient(
+            skin.skinRarity
+          )}`}
+        >
+          <img
+            src={skin.imageSrc}
+            className="scale-[120%] mx-auto min-h-64 min-w-64"
+          />
+        </div>
+        <div className="-translate-y-20 scale-105 rounded-md bg-white p-8 text-right">
+          <p className="text-2xl font-bold text-gray-900">{skin.skinName}</p>
+          <p className="font-medium text-gray-600 text-lg">{skin.weaponName}</p>
+        </div>
       </div>
     </div>
   )

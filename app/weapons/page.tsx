@@ -5,7 +5,7 @@ type Props = {}
 
 export default function Page({}: Props) {
   return (
-    <main className="mx-auto max-w-6xl mt-16">
+    <main className="mx-auto max-w-6xl my-16 p-16 lg:p-0">
       <Loadout />
     </main>
   )

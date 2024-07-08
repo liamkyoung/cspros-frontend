@@ -6,12 +6,12 @@ type Props = {}
 
 export default function Header({}: Props) {
   return (
-    <div className="flex items-center gap-16 bg-slate-600 p-4 px-10 md:px-20 mx-auto">
+    <div className="flex items-center gap-16 p-4 px-10 md:px-20 mx-auto border-b border-gray-50 bg-gray-700">
       <Link href="/">
         <Logo />
       </Link>
 
-      <div className="flex items-center gap-8 text-lg font-medium hover:cursor-pointer">
+      <div className="flex items-center gap-8 text-lg hover:cursor-pointer text-white">
         <Link href="/players">Players</Link>
         <Link href="/weapons">Weapons</Link>
         <Link href="/skins">Skins</Link>

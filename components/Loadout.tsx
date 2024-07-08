@@ -6,7 +6,7 @@ import {
   TeamAssigned,
   WeaponProfile,
 } from '@/types/viewmodels/types'
-import { Weapons } from '@/data/weaponData'
+import { MidTier, Weapons } from '@/data/weaponData'
 import WeaponDisplay from '@/components/WeaponDisplay'
 
 type Props = {
@@ -51,15 +51,19 @@ export default function Loadout({ player }: Props) {
   const [teamFilter, setFilter] = useState(TeamAssigned.BOTH)
 
   const selectedStyle = (filter: TeamAssigned) => {
-    if (teamFilter === filter) return 'bg-red-100 text-red-700'
+    if (teamFilter === filter) return 'bg-gray-100 text-gray-700'
 
     return 'text-gray-500 hover:text-gray-700'
+  }
+
+  const handleChange = (event) => {
+    setFilter(event.target.value)
   }
 
   return (
     <div>
       <div className="flex items-center justify-between">
-        <h1 className="text-4xl font-bold">Weapons</h1>
+        <h1 className="text-4xl font-bold">Loadout</h1>
 
         <div>
           <div className="sm:hidden">
@@ -69,13 +73,20 @@ export default function Loadout({ player }: Props) {
             <select
               id="tabs"
               name="tabs"
-              className="block w-full rounded-md border-gray-300 focus:border-red-500 focus:ring-red-500"
+              className="block w-full rounded-md border-gray-300 focus:border-gray-500 focus:ring-gray-500 text-black"
+              onChange={handleChange}
             >
-              <option selected={teamFilter === TeamAssigned.BOTH}>All</option>
-              <option selected={teamFilter === TeamAssigned.CT}>
+              <option
+                selected={teamFilter === TeamAssigned.BOTH}
+                onChange={() => setFilter(TeamAssigned.BOTH)}
+                value={0}
+              >
+                All
+              </option>
+              <option selected={teamFilter === TeamAssigned.CT} value={2}>
                 Counter-Terrorist
               </option>
-              <option selected={teamFilter === TeamAssigned.T}>
+              <option selected={teamFilter === TeamAssigned.T} value={1}>
                 Terrorist
               </option>
             </select>
@@ -111,7 +122,7 @@ export default function Loadout({ player }: Props) {
         </div>
       </div>
 
-      <div className="grid grid-cols-4 gap-8 mt-16">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-16">
         <WeaponTypeColumn
           title="Pistols"
           weapons={Weapons.Pistols}
@@ -120,15 +131,8 @@ export default function Loadout({ player }: Props) {
         />
 
         <WeaponTypeColumn
-          title="SMGs"
-          weapons={Weapons.SMG}
-          filter={teamFilter}
-          player={player}
-        />
-
-        <WeaponTypeColumn
-          title="Heavy"
-          weapons={Weapons.Heavy}
+          title="Mid-Tier"
+          weapons={MidTier}
           filter={teamFilter}
           player={player}
         />

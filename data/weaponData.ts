@@ -256,9 +256,12 @@ export const Rifle: WeaponProfile[] = [
   },
 ]
 
+export const MidTier: WeaponProfile[] = SMG.concat(Heavy)
+
 export const Weapons = {
   Pistols: Pistols,
   Heavy: Heavy,
   SMG: SMG,
   Rifle: Rifle,
+  MidTier: MidTier,
 }

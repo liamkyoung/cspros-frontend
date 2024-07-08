@@ -8,8 +8,8 @@ import SkinProfileGroup from '@/components/SkinProfileGroup'
 
 export default function Page({ params }: { params: {} }) {
   return (
-    <main className="mx-auto max-w-6xl space-y-16 mt-16">
-      <h1 className="text-4xl font-bold">Skins</h1>
+    <main className="mx-auto max-w-6xl space-y-16 my-16">
+      <h1 className="text-4xl font-bold text-center lg:text-left">Skins</h1>
 
       <SkinProfileGroup title="Rifles" weapons={Weapons['Rifle']} />
       <SkinProfileGroup title="Pistols" weapons={Weapons['Pistols']} />

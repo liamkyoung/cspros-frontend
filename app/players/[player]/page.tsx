@@ -31,20 +31,20 @@ export default function Page({ params }: { params: { player: string } }) {
   }, [])
 
   return (
-    <main className="flex gap-16 mt-24">
+    <main className="flex gap-16 my-16">
       {player && (
-        <>
+        <div className="flex flex-col lg:flex-row gap-8 mx-auto">
           <div>
             <PlayerDisplay player={player} />
-            <div className="space-y-4 mt-10">
-              <h2>Teammates</h2>
+            <div className="space-y-4 mt-10 hidden lg:block">
+              <h2 className="text-xl font-medium">Teammates</h2>
               {teammates &&
                 teammates.map((p) => <TeammateDisplay player={p} />)}
             </div>
           </div>
 
           <Loadout player={player} />
-        </>
+        </div>
       )}
     </main>
   )

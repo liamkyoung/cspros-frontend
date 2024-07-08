@@ -17,10 +17,10 @@ export default function SkinProfileGroup({
   hideWeaponTitle = false,
 }: SkinRowProps) {
   return (
-    <div>
+    <div className="px-4 lg:px-0">
       {title && (
         <>
-          <h2 className="font-semibold text-3xl">{title}</h2>
+          <h2 className="font-semibold text-4xl text-left">{title}</h2>
           <hr className="mt-2 mb-6" />
         </>
       )}
@@ -30,7 +30,7 @@ export default function SkinProfileGroup({
           <div>
             <div className="flex items-center justify-between mb-10">
               {!hideWeaponTitle && (
-                <h3 className="text-2xl font-medium">{weapon.weaponName}</h3>
+                <h3 className="text-3xl font-medium">{weapon.weaponName}</h3>
               )}
               {!hideViewAllButton && (
                 <SecondaryButtonLink
@@ -44,6 +44,7 @@ export default function SkinProfileGroup({
             <PopularSkins
               key={weapon.weaponName}
               weaponName={weapon.normalizedName}
+              formattedName={weapon.weaponName}
             />
           </div>
         ))}

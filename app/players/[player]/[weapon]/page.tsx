@@ -5,8 +5,13 @@ import FavoriteWeapon from './FavoriteWeapon'
 import Breadcrumbs from './Breadcrumbs'
 import { getPlayer, getTeammates } from '@/utils/data/Players'
 import { useState, useEffect } from 'react'
-import { PlayerProfile, SkinProfile } from '@/types/viewmodels/types'
+import {
+  PlayerProfile,
+  SkinProfile,
+  SkinRarity,
+} from '@/types/viewmodels/types'
 import { getPopularSkinsForPlayerAndWeapon } from '@/utils/data/Skins'
+import SecondaryButtonLink from '@/components/Buttons/SecondaryButtonLink'
 
 /*
     NEEDS: MOST USED 3 SKINS FOR SPECIFIC PLAYER AND SPECIFIC WEAPON
@@ -32,7 +37,7 @@ export default function Page({
       )
       const teammateData = await getTeammates(params.player)
       setPlayer(playerProfileData)
-      setTeammates(teammates)
+      setTeammates(teammateData)
       setSkinProfiles(skinProfileData)
       setLoading(false)
     }
@@ -45,28 +50,44 @@ export default function Page({
   }
 
   return (
-    <main className="grid grid-cols-3 gap-4 p-16">
+    <main className="grid lg:grid-cols-3 grid-cols-1 gap-8 my-16 mx-10 lg:mx-40">
       <div className="col-span-1">
         {playerProfile && <PlayerDisplay player={playerProfile} />}
 
-        <div className="flex gap-16 mx-auto mt-24">
+        <div className="lg:flex gap-16 mx-auto hidden">
           <div className="space-y-4">
-            <h2>Teammates</h2>
+            <h2 className="text-xl font-medium">Teammates</h2>
             {teammates && teammates.map((p) => <TeammateDisplay player={p} />)}
           </div>
         </div>
       </div>
 
-      {/* Weapon List */}
-      <div className="col-span-2">
-        <Breadcrumbs playerName={params.player} weaponName={params.weapon} />
-        <div className="grid grid-cols-2 gap-4">
-          {skinProfiles &&
-            skinProfiles.map((skin, i) => (
+      {skinProfiles && skinProfiles.length > 0 ? (
+        <div className="col-span-2 space-y-4">
+          <Breadcrumbs playerName={params.player} weaponName={params.weapon} />
+          <div className="grid grid-cols-2 gap-x-6">
+            {skinProfiles.map((skin, i) => (
               <FavoriteWeapon skin={skin} large={i == 0} />
             ))}
+          </div>
         </div>
-      </div>
+      ) : (
+        <div className="col-span-2  flex items-center justify-center flex-col">
+          <div className="bg-slate-600 text-center text-xl p-16 rounded-md">
+            <p className="mb-4 font-medium">
+              No instances found of {params.player} using a {params.weapon} with
+              a skin.
+            </p>
+            {playerProfile && (
+              <SecondaryButtonLink
+                href={`${playerProfile?.uri}`}
+                text={`Back to ${params.player}'s profile`}
+                hasArrow
+              />
+            )}
+          </div>
+        </div>
+      )}
     </main>
   )
 }

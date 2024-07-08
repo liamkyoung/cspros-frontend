@@ -24,18 +24,18 @@ export default function Page() {
   }, [])
 
   return (
-    <main className="max-w-6xl mt-16">
-      <h1 className="text-4xl font-bold">All Players</h1>
+    <main className="max-w-6xl mx-auto mt-16">
+      <h1 className="text-4xl font-bold lg:text-left text-center">Players</h1>
 
-      <div className="space-y-16">
+      <div className="space-y-16 flex flex-col mt-12">
         {teams &&
           teams.map((team) => (
-            <div>
-              <h1 className="text-2xl font-medium">{team.teamName}</h1>
-              <div className="flex gap-8 mt-8">
+            <div className="mx-10 lg:mx-0">
+              <h1 className="text-3xl font-medium">{team.teamName}</h1>
+              <div className="flex flex-col lg:flex-row gap-8 mt-6 lg:mt-12 lg:justify-between">
                 {team.players.map((player) => (
-                  <Link href={player.uri}>
-                    <PlayerDisplay player={player}></PlayerDisplay>
+                  <Link href={player.uri} className="hover:scale-110">
+                    <PlayerDisplay player={player} />
                   </Link>
                 ))}
               </div>

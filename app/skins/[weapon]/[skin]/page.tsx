@@ -5,6 +5,7 @@ import PlayerContainer from './PlayerContainer'
 import { getPopularPlayersUsingSkin } from '@/utils/data/Skins'
 import { useState, useEffect } from 'react'
 import { PlayersUsingSkin } from '@/types/viewmodels/types'
+import SkinDisplay from '@/components/SkinDisplay'
 
 /*
     NEEDS: TOP 5 Players using a particular skin and number of kills for each player
@@ -39,7 +40,7 @@ export default function Page({
 
   return (
     <main className="mx-auto max-w-6xl">
-      <div className="grid grid-cols-2 gap-8 mt-16">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 my-16">
         {playerUsingSkinDto && (
           <>
             {/* {Weapon Container} */}

@@ -1,5 +1,3 @@
-import { Team } from '../models/Team'
-
 export type SkinProfile = {
   uri: string
   imageSrc: string

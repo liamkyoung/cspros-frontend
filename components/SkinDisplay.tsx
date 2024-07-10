@@ -32,7 +32,7 @@ function getBackgroundGradient(Rarity: SkinRarity): string {
 export default function SkinDisplay({ skin }: Props) {
   return (
     <Link href={skin.uri} className="block">
-      <div className="relative size-56 md:size-64 hover:scale-110">
+      <div className="relative size-36 md:size-64 hover:scale-110">
         <div
           className={`rounded-md bg-gradient-to-b ${getBackgroundGradient(
             skin.skinRarity
@@ -40,12 +40,14 @@ export default function SkinDisplay({ skin }: Props) {
         >
           <img
             src={skin.imageSrc}
-            className="scale-[120%] size-48 md:size-64  lg:size-56"
+            className="md:scale-[120%] size-32 md:size-64 lg:size-56 mx-auto"
           />
         </div>
-        <div className="-translate-y-20 scale-105 rounded-md bg-white p-4 text-right">
-          <p className="text-lg font-bold text-gray-900">{skin.skinName}</p>
-          <p className="font-medium text-gray-600 text-sm">{skin.weaponName}</p>
+        <div className="-translate-y-10 md:-translate-y-20 scale-105 rounded-md bg-white p-2 md:p-4 text-right">
+          <p className="md:text-lg font-bold text-gray-900">{skin.skinName}</p>
+          <p className="font-medium text-gray-600 text-xs md:text-sm">
+            {skin.weaponName}
+          </p>
         </div>
       </div>
     </Link>

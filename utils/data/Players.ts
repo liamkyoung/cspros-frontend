@@ -1,4 +1,3 @@
-import { Player } from '@/types/models/Player'
 import { PlayerProfile } from '@/types/viewmodels/types'
 
 const BACKEND_HOST = process.env.NEXT_PUBLIC_BACKEND_HOST

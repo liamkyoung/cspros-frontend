@@ -12,7 +12,8 @@ export type SkinProfile = {
 
 export type PlayerProfile = {
   uri: string
-  team: Team
+  teamName: string
+  teamProfileImage: string
   playerName: string
   countryAbbreviation?: string
   profileImage: string

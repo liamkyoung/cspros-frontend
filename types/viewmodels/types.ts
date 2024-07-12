@@ -46,6 +46,13 @@ export type TeammateDisplayData = {
   imgSrc: string
 }
 
+export type AppStats = {
+  totalKills: number
+  totalGames: number
+  totalMinutes: number
+  totalSkins: number
+}
+
 export enum TeamAssigned {
   BOTH,
   T,

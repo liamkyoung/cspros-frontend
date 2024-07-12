@@ -24,13 +24,11 @@ export default function RootLayout({
       <Head>
         <title>Home</title>
       </Head>
-      <body className={outfit.className}>
+      <body className={`${outfit.className} bg-gray-800 text-gray-50`}>
         <Header />
         {children}
-      </body>
-      <footer>
         <Footer />
-      </footer>
+      </body>
     </html>
   )
 }

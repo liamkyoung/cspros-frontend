@@ -13,7 +13,7 @@ export default function Header({}: Props) {
     <>
       {/* {Desktop Nav} */}
       <nav className="relative bg-gray-800">
-        <div className="flex py-8 px-4 lg:px-8 justify-between items-center">
+        <div className="flex py-8 px-8 lg:px-32 justify-between items-center">
           <Link className="text-2xl text-white font-bold" href="/">
             <img className="h-12" src="cspros-logo.png" alt="" width="auto" />
           </Link>

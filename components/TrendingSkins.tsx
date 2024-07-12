@@ -24,7 +24,7 @@ export default function TrendingSkins({}: Props) {
   if (loading) return <div>Loading skins...</div>
 
   return (
-    <section className="space-y-10 px-4">
+    <section className="space-y-16">
       <div className="flex items-center justify-between">
         <h2 className="font-semibold text-3xl">Trending Skins</h2>
         <SecondaryButtonLink href="/skins" text="See All Skins" hasArrow />

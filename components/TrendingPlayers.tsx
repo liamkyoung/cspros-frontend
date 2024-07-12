@@ -30,7 +30,7 @@ export default function TrendingPlayers({}: Props) {
   }
 
   return (
-    <section className="space-y-10 px-4">
+    <section className="space-y-16">
       <div className="flex items-center justify-between">
         <h2 className="font-semibold text-3xl">Featured Players</h2>
         <SecondaryButtonLink text="See All Players" href="/players" hasArrow />

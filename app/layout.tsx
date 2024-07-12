@@ -3,6 +3,7 @@ import { Inter, Outfit } from 'next/font/google'
 import './globals.css'
 import Head from 'next/head'
 import Header from '@/components/Header'
+import Footer from './Footer'
 
 const inter = Inter({ subsets: ['latin'] })
 const outfit = Outfit({ subsets: ['latin'] })
@@ -27,6 +28,9 @@ export default function RootLayout({
         <Header />
         {children}
       </body>
+      <footer>
+        <Footer />
+      </footer>
     </html>
   )
 }

@@ -19,7 +19,7 @@ export default function HeroSection({}: Props) {
                 </h2>
                 <p className="mb-12 lg:mb-16 2xl:mb-24 text-xl text-gray-100">
                   Want to use the same weapon skins as your CS2 esport players?
-                  See what they're rocking here.
+                  See what they&apos;re rocking here.
                 </p>
                 <Link
                   className="inline-block px-12 py-5 text-lg text-white font-bold bg-blue-500 hover:bg-blue-600 rounded-full transition duration-200"

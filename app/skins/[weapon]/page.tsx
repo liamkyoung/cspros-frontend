@@ -5,10 +5,6 @@ import Link from 'next/link'
 import { useState, useEffect } from 'react'
 import SkinDisplay from '@/components/SkinDisplay'
 import Spinner from '@/components/Spinner'
-/*
-    NEEDS: ALL SKINS FOR A PARTICULAR WEAPON, WEAPON FORMATTED NAME
-    ROUTE: /api/Skin/GetAllSkinsForWeapon?weaponName=ak47
-*/
 
 export default function Page({ params }: { params: { weapon: string } }) {
   const [skins, setSkins] = useState<SkinProfile[] | null>(null)

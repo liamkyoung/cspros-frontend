@@ -11,7 +11,7 @@ const outfit = Outfit({ subsets: ['latin'] })
 export const metadata: Metadata = {
   title: 'CS-Pros | Counter-Strike Pro Skin Database',
   description:
-    'Live database that shows what skins professional counter-strike players use.',
+    'Live database that shows popular skins used by players in professional counter-strike matches.',
 }
 
 export default function RootLayout({

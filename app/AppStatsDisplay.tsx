@@ -25,7 +25,7 @@ export default function AppStatsDisplay({}: Props) {
       <>
         {stats && (
           <section className="py-20 2xl:py-40 bg-gray-800">
-            <div className="container px-4 mx-auto">
+            <div className="max-w-7xl px-4 mx-auto">
               <div>
                 <div className="flex flex-wrap -mx-6 lg:-mx-14">
                   <div className="w-full md:w-1/2 lg:w-1/4 px-6 lg:px-14 mb-16 lg:mb-0">
